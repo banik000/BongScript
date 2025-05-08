@@ -1,0 +1,11 @@
+kaj shuru
+
+eta holo a = 1;
+
+jotokhon (a != 6)
+{
+    lekho (a);
+    a = a + 1;
+}
+
+kaj shesh

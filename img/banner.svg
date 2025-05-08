@@ -1,0 +1,41 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background of the banner -->
+  <rect x="0" y="0" width="1200" height="400" fill="#FAF6E9" />
+
+  <!-- Logo (Left side) -->
+  <rect x="30" y="30" width="350" height="350" rx="40" ry="40" fill="#90C67C" />
+  <text 
+    x="355" 
+    y="390" 
+    text-anchor="end" 
+    dominant-baseline="text-after-edge"
+    font-family="Roboto, sans-serif" 
+    font-size="180" 
+    font-weight="700" 
+    fill="#323232">
+    ব
+  </text>
+
+  <!-- Text "Bong Script" on the right side -->
+  <text 
+    x="700" 
+    y="165" 
+    font-family="Roboto, sans-serif" 
+    font-size="180" 
+    font-weight="700" 
+    fill="#323232" 
+    text-anchor="middle">
+    Bong
+  </text>
+  
+  <text 
+    x="900" 
+    y="340" 
+    font-family="Roboto, sans-serif" 
+    font-size="180" 
+    font-weight="700" 
+    fill="#323232" 
+    text-anchor="middle">
+    Script
+  </text>
+</svg>

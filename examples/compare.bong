@@ -1,0 +1,19 @@
+kaj shuru
+
+eta holo a = 10;
+eta holo b = 30;
+
+jodi (a == b)
+{
+    lekho("Equal");
+}
+nahole jodi (a > b)
+{
+    lekho("Greater");
+}
+nahole
+{
+    lekho ("Smaller");
+}
+
+kaj shesh

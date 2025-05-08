@@ -1,0 +1,14 @@
+kaj shuru
+
+eta holo a = 10;
+eta holo b = 40;
+eta holo c = 10.67;
+
+eta holo s1 = "Apple";
+eta holo s2 = "Orange";
+
+lekho (a + b);
+lekho (a + b + c);
+lekho (s1 + s2);
+
+kaj shesh
