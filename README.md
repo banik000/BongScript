@@ -36,7 +36,7 @@ Write your own program in **program.bong** and run as:
 ```bash
 python main.py program.bong
 ```
-Run any of the demo programs in examples folder as:
+Or run any of the demo programs in examples folder as:
 ```bash
 python main.py examples/hello_world.bong
 ```
@@ -92,7 +92,7 @@ Output:
 AppleOrange
 ```
 ### 4. If-Else statements
-An If statement is reprsented by **jodi** and else by **nahole**. If Else is represented by **nahole jodi**.
+An If statement is reprsented by **jodi** and Else by **nahole**. Else If is represented by **nahole jodi**.
 
 Following is a program to compare two numbers:
 ```
