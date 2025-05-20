@@ -10,7 +10,8 @@ class Lexer:
         "jotokhon",
         "kaj",
         "shuru",
-        "shesh"
+        "shesh",
+        "montobbo"
     }
     OPERATORS = {
         '+', '-', '*', '/', '>', '<', '==', '=', '!='
@@ -42,8 +43,12 @@ class Lexer:
 
             if char.isalpha():
                 identifier = self.consume_identifier()
+
                 if identifier in self.KEYWORDS:
-                    tokens.append(Token(TokenType.KEYWORD, identifier))
+                    if identifier == "montobbo":
+                        self.consume_comment()
+                    else:
+                        tokens.append(Token(TokenType.KEYWORD, identifier))
                 else:
                     tokens.append(Token(TokenType.IDENTIFIER, identifier))
             
@@ -88,11 +93,11 @@ class Lexer:
             result += self.advance()
         return result
 
-    # def consume_number(self):
-    #     result = ""
-    #     while self.peek() and self.peek().isdigit():
-    #         result += self.advance()
-    #     return int(result)
+    def consume_comment(self):
+        while self.peek() and self.peek() != ';':
+            self.advance()
+        if self.peek() == ';':
+            self.advance()
 
     def consume_number(self):
         result = ""

@@ -41,7 +41,7 @@ Run any of the demo programs in examples folder as:
 python main.py examples/hello_world.bong
 ```
 
-## 🧠 BongScript Syntax
+## 📜 BongScript Syntax
 
 ### 1. Program Block
 All BongScript programs must be enclosed within:
@@ -147,6 +147,23 @@ Output:
 5
 ```
 
+### 6. Adding comments
+Single-line and Multi-line comments can be added using the keyword **montobbo**.
+
+Following is an example:
+```
+kaj shuru
+
+montobbo This is a single-line comment;
+
+montobbo 
+This is a
+multi-line
+comment;
+
+kaj shesh
+```
+
 ## ⚒️ Requirements
 * Python 3.7+
 
@@ -154,22 +171,21 @@ No external dependencies required.
 
 
 ## 🥺 To Do
+This project is under active development as of May 2025. Following features to be implemented:
+
 * Methods
 * Arrays
 * Switch case
 * Break and Continue statements
 * Type Casting
 * Compound Assignment operators
-* Single-line and Multi-line Comments
 * More types of loops
 * User Input 
 * Error handling
 * Interactive REPL mode
 
 ## 👨‍💻 Author
-Made with ❤️ by Soumyajit Banik
+Made with ❤️ by Soumyajit Banik.
 
-Made with ❤️ for post-modernist Bengali intellectuals
-
-Note: This project is under active development as of May 2025.
+Made with ❤️ for post-modernist Bengali intellectuals.
 
