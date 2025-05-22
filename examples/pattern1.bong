@@ -1,0 +1,11 @@
+kaj shuru
+
+eta holo n = 10;
+
+jotokhon(n>0)
+{
+    lekho("*" * n);
+    n = n - 1;
+}
+
+kaj shesh

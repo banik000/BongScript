@@ -1,0 +1,19 @@
+kaj shuru
+
+eta holo n = 10;
+
+eta holo a = 0;
+eta holo b = 1;
+eta holo next = b;
+
+jotokhon(n > 0)
+{
+    lekho(next);
+    a = b;
+    b = next;
+    next = a + b;
+
+    n = n - 1;
+}
+
+kaj shesh
