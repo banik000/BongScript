@@ -41,7 +41,7 @@ Or run any of the demo programs in examples folder as:
 python main.py examples/hello_world.bong
 ```
 
-## 📜 BongScript Syntax
+## 📋 BongScript Syntax
 
 ### 1. Program Block
 All BongScript programs must be enclosed within:
@@ -147,7 +147,42 @@ Output:
 5
 ```
 
-### 6. Adding comments
+### 6. Break and Continue statements
+Break is represented by **theme jao** and Continue is represented by **egiye jao**.
+```
+kaj shuru
+
+eta holo n = 0;
+
+jotokhon(n < 10)
+{
+    n = n + 1;
+
+    jodi(n < 4)
+    {
+        egiye jao;
+    }
+
+    jodi (n > 8)
+    {
+        theme jao;
+    }
+
+    lekho(n);
+}
+
+kaj shesh
+```
+Output:
+```
+4
+5
+6
+7
+8
+```
+
+### 7. Adding comments
 Single-line and Multi-line comments can be added using the keyword **montobbo**.
 
 Following is an example:
@@ -163,6 +198,21 @@ comment;
 
 kaj shesh
 ```
+## 📜 List of BongScript Keywords 
+| BongScript keyword   | Python equivalent    | 
+| -------------------- | -------------------- | 
+| kaj shuru            |                      | 
+| kaj shesh            |                      | 
+| eta holo             |                      |
+| lekho                | print                |  
+| jodi                 | if                   | 
+| nahole               | else                 | 
+| nahole jodi          | elif                 | 
+| jotokhon             | while                | 
+| theme jao            | break                | 
+| egiye jao            | continue             | 
+| montobbo             |                      | 
+
 
 ## ⚒️ Requirements
 * Python 3.7+
@@ -188,4 +238,6 @@ This project is under active development as of May 2025. Following features to b
 Made with ❤️ by Soumyajit Banik.
 
 Made with ❤️ for post-modernist Bengali intellectuals.
+
+![Python Badge](img/badge.svg)
 

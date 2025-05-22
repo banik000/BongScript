@@ -11,7 +11,10 @@ class Lexer:
         "kaj",
         "shuru",
         "shesh",
-        "montobbo"
+        "montobbo",
+        "theme",
+        "egiye",
+        "jao"
     }
     OPERATORS = {
         '+', '-', '*', '/', '>', '<', '==', '=', '!='

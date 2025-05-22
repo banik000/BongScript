@@ -74,6 +74,14 @@ class While(Node):
     def __repr__(self):
         body_repr = "\n    ".join(repr(stmt) for stmt in self.body)
         return f"While({self.cond}) {{\n    {body_repr}\n  }}"
+    
+class Break(Node):
+    def __repr__(self):
+        return "Break()"
+    
+class Continue(Node):
+    def __repr__(self):
+        return "Continue()"
 
 class Parser:
     def __init__(self, tokens):
@@ -126,6 +134,10 @@ class Parser:
             return self.parse_if()
         elif tok.value == "jotokhon":
             return self.parse_while()
+        elif tok.value == "theme":
+            return self.parse_break()
+        elif tok.value == "egiye":
+            return self.parse_continue()
         elif tok.type == TokenType.IDENTIFIER:
             return self.parse_assignment()
         else:
@@ -231,3 +243,15 @@ class Parser:
             return expr
         else:
             raise Exception(f"Unexpected token in expression: {tok}")
+        
+    def parse_break(self):
+        self.eat(TokenType.KEYWORD, "theme")
+        self.eat(TokenType.KEYWORD, "jao")
+        self.eat(TokenType.SEMICOLON)
+        return Break()
+
+    def parse_continue(self):
+        self.eat(TokenType.KEYWORD, "egiye")
+        self.eat(TokenType.KEYWORD, "jao")
+        self.eat(TokenType.SEMICOLON)
+        return Continue()

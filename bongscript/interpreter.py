@@ -1,4 +1,4 @@
-from .parser import Program, Print, Assign, BinOp, Number, String, Variable, If, While
+from .parser import Program, Print, Assign, BinOp, Number, String, Variable, If, While, Break, Continue
 
 class Environment:
     def __init__(self):
@@ -12,6 +12,11 @@ class Environment:
     def set(self, name, value):
         self.vars[name] = value
 
+class BreakException(Exception):
+    pass
+
+class ContinueException(Exception):
+    pass
 
 class Interpreter:
     def __init__(self):
@@ -79,8 +84,19 @@ class Interpreter:
 
         elif isinstance(node, While):
             while self.eval(node.cond):
-                for stmt in node.body:
-                    self.eval(stmt)
+                try:
+                    for stmt in node.body:
+                        self.eval(stmt)
+                except BreakException:
+                    break
+                except ContinueException:
+                    continue
+
+        elif isinstance(node, Break):
+            raise BreakException()
+        
+        elif isinstance(node, Continue):
+            raise ContinueException()
 
         else:
             raise Exception(f"Unknown node type: {node}")

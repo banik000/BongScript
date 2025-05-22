@@ -1,0 +1,22 @@
+kaj shuru
+
+eta holo n = 0;
+
+jotokhon(n < 10)
+{
+    n = n + 1;
+
+    jodi(n < 4)
+    {
+        egiye jao;
+    }
+
+    jodi (n > 8)
+    {
+        theme jao;
+    }
+
+    lekho(n);
+}
+
+kaj shesh
