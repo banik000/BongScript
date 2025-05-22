@@ -226,7 +226,6 @@ This project is under active development as of May 2025. Following features to b
 * Methods
 * Arrays
 * Switch case
-* Break and Continue statements
 * Type Casting
 * Compound Assignment operators
 * More types of loops
