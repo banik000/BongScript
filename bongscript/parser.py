@@ -11,10 +11,11 @@ class Program(Node):
         return f"Program(\n  {statements_repr}\n)"
 
 class Print(Node):
-    def __init__(self, expr):
+    def __init__(self, expr, newline=False):
         self.expr = expr
+        self.newline = newline
     def __repr__(self):
-        return f"Print({self.expr})"
+        return f"Print({self.expr}, newline={self.newline})"
 
 class Assign(Node):
     def __init__(self, name, expr, declare=False):
@@ -126,7 +127,7 @@ class Parser:
 
     def parse_statement(self):
         tok = self.current()
-        if tok.value == "lekho":
+        if tok.value == "lekho" or tok.value == "ullekho":
             return self.parse_print()
         elif tok.value == "eta":
             return self.parse_declaration()
@@ -160,12 +161,17 @@ class Parser:
         return Assign(name, expr)
 
     def parse_print(self):
-        self.eat(TokenType.KEYWORD, "lekho")
+        keyword = self.eat(TokenType.KEYWORD).value
         self.eat(TokenType.LPAREN)
         expr = self.parse_expression()
         self.eat(TokenType.RPAREN)
         self.eat(TokenType.SEMICOLON)
-        return Print(expr)
+        if keyword == "lekho":
+            return Print(expr, newline=True)
+        elif keyword == "ullekho":
+            return Print(expr, newline=False)
+        else:
+            raise Exception("Expected {0} or {1}, got {2}".format("lekho", "ullekho", keyword))
 
     def parse_if(self):
         self.eat(TokenType.KEYWORD, "jodi")

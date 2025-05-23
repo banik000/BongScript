@@ -33,7 +33,10 @@ class Interpreter:
 
         elif isinstance(node, Print):
             value = self.eval(node.expr)
-            print(value)
+            if node.newline:
+                print(value)
+            else:
+                print(value, end="")
 
         elif isinstance(node, BinOp):
             left = self.eval(node.left)

@@ -54,17 +54,21 @@ kaj shesh
 ```
 
 ### 2. Print Statements
-Basic Hello World program:
+To print statements ending with a newline use **lekho**. To print statements in the same line use **ullekho**.
 ```
 kaj shuru
 
 lekho ("Hello World");
+
+ullekho("Bye");
+ullekho("World");
 
 kaj shesh
 ```
 Output:
 ```
 Hello World
+ByeWorld
 ```
 
 ### 3. Variable Declarations
@@ -205,6 +209,7 @@ kaj shesh
 | kaj shesh            |                      | 
 | eta holo             |                      |
 | lekho                | print                |  
+| ullekho              |                      | 
 | jodi                 | if                   | 
 | nahole               | else                 | 
 | nahole jodi          | elif                 | 

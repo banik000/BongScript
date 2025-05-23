@@ -5,6 +5,7 @@ class Lexer:
         "eta",
         "holo",
         "lekho",
+        "ullekho",
         "jodi",
         "nahole",
         "jotokhon",

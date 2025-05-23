@@ -1,11 +1,18 @@
 kaj shuru
 
-eta holo n = 10;
+eta holo row = 10;
 
-jotokhon(n>0)
+jotokhon(row>0)
 {
-    lekho("*" * n);
-    n = n - 1;
+    eta holo col = row;
+    jotokhon(col > 0)
+    {
+        ullekho("*");
+        col = col - 1;
+    }
+
+    lekho("");
+    row =  row - 1;
 }
 
 kaj shesh
