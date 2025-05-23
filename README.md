@@ -203,20 +203,20 @@ comment;
 kaj shesh
 ```
 ## 📜 List of BongScript Keywords 
-| BongScript keyword   | Python equivalent    | 
-| -------------------- | -------------------- | 
-| kaj shuru            |                      | 
-| kaj shesh            |                      | 
-| eta holo             |                      |
-| lekho                | print                |  
-| ullekho              |                      | 
-| jodi                 | if                   | 
-| nahole               | else                 | 
-| nahole jodi          | elif                 | 
-| jotokhon             | while                | 
-| theme jao            | break                | 
-| egiye jao            | continue             | 
-| montobbo             |                      | 
+| BongScript keyword   | Meaning              | Inspired from        | 
+| -------------------- | -------------------- | -------------------- |
+| kaj shuru            | begin                | SQL Server           |
+| kaj shesh            | end                  | SQL Server           |
+| eta holo             | let                  | JavaScript           |
+| lekho                | println              | Java                 |
+| ullekho              | print                | Java                 |
+| jodi                 | if                   | Python               |
+| nahole               | else                 | Python               |
+| nahole jodi          | elif                 | Python               |
+| jotokhon             | while                | Python               |
+| theme jao            | break                | Python               |
+| egiye jao            | continue             | Python               |
+| montobbo             | comments             |                      |
 
 
 ## ⚒️ Requirements
