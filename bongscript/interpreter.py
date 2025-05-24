@@ -1,4 +1,4 @@
-from .parser import Program, Print, Assign, BinOp, Number, String, Variable, If, While, Break, Continue
+from .parser import Program, Print, Assign, BinOp, Number, String, Variable, If, While, Break, Continue, Input
 
 class Environment:
     def __init__(self):
@@ -104,6 +104,18 @@ class Interpreter:
         
         elif isinstance(node, Continue):
             raise ContinueException()
+        
+        elif isinstance(node, Input):
+            if node.input_type == "int":
+                return int(input())
+            elif node.input_type == "float":
+                return float(input())
+            elif node.input_type == "string":
+                return input()
+            else:
+                raise Exception(f"Unknown Input type: {node.input_type}")
 
         else:
             raise Exception(f"Unknown node type: {node}")
+        
+

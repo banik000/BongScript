@@ -186,7 +186,27 @@ Output:
 8
 ```
 
-### 7. Adding comments
+### 7. Taking User Input
+Inputs should be taken only during variable declarations.
+
+To take string input use **bhasha nao**. To take int input use **sonkhya nao**. To take float input use **dosomik sonkhya nao**.
+```
+kaj shuru
+
+eta holo a = sonkhya nao();
+
+eta holo b = dosomik sonkhya nao();
+
+eta holo s1 = bhasha nao();
+
+lekho(a);
+lekho(b);
+lekho(s1);
+
+kaj shesh
+```
+
+### 8. Adding comments
 Single-line and Multi-line comments can be added using the keyword **montobbo**.
 
 Following is an example:
@@ -216,6 +236,9 @@ kaj shesh
 | jotokhon             | while                | Python               |
 | theme jao            | break                | Python               |
 | egiye jao            | continue             | Python               |
+| bhasha nao           | input                | Python               |
+| sonkhya nao          | integer input        |                      |
+| dosomik sonkhya nao  | decimal input        |                      |
 | montobbo             | comments             |                      |
 
 
@@ -234,9 +257,10 @@ This project is under active development as of May 2025. Following features to b
 * Type Casting
 * Compound Assignment operators
 * More types of loops
-* User Input 
 * Error handling
 * Interactive REPL mode
+* Publish to PyPi as a pip package
+* VS Code extension for syntax highlighting
 
 ## 👨‍💻 Author
 Made with ❤️ by Soumyajit Banik.

@@ -83,6 +83,12 @@ class Break(Node):
 class Continue(Node):
     def __repr__(self):
         return "Continue()"
+    
+class Input(Node):
+    def __init__(self, input_type):
+        self.input_type = input_type
+    def __repr__(self):
+        return f"Input(Type = {self.input_type})"
 
 class Parser:
     def __init__(self, tokens):
@@ -127,7 +133,7 @@ class Parser:
 
     def parse_statement(self):
         tok = self.current()
-        if tok.value == "lekho" or tok.value == "ullekho":
+        if tok.value in ("lekho", "ullekho"):
             return self.parse_print()
         elif tok.value == "eta":
             return self.parse_declaration()
@@ -139,6 +145,8 @@ class Parser:
             return self.parse_break()
         elif tok.value == "egiye":
             return self.parse_continue()
+        # elif tok.value in ("sonkhya", "dosomik", "bhasha"):
+        #     self.parse_input()
         elif tok.type == TokenType.IDENTIFIER:
             return self.parse_assignment()
         else:
@@ -189,21 +197,6 @@ class Parser:
         return If(cond, body, else_branch)
         
     def parse_else(self):
-        # self.eat(TokenType.KEYWORD, "nahole")
-        # if self.current().value == "jodi":
-        #     self.eat(TokenType.KEYWORD, "jodi")
-        #     self.eat(TokenType.LPAREN)
-        #     cond = self.parse_expression()
-        #     self.eat(TokenType.RPAREN)
-        #     self.eat(TokenType.LBRACE)
-        #     body = self.parse_block_statements()
-        #     self.eat(TokenType.RBRACE)
-        #     return If(cond, body)
-        # else:
-        #     self.eat(TokenType.LBRACE)
-        #     body = self.parse_block_statements()
-        #     self.eat(TokenType.RBRACE)
-        #     return body
         self.eat(TokenType.KEYWORD, "nahole")
         if self.current().type == TokenType.KEYWORD and self.current().value == "jodi":
             return self.parse_if()
@@ -240,13 +233,16 @@ class Parser:
         elif tok.type == TokenType.IDENTIFIER:
             return Variable(tok.value)
         elif tok.type == TokenType.LPAREN:
-            # expr = self.parse_expression()
-            # self.eat(TokenType.RPAREN)
-            # return expr
-            self.eat(TokenType.LPAREN)
             expr = self.parse_expression()
             self.eat(TokenType.RPAREN)
             return expr
+
+            # self.eat(TokenType.LPAREN)
+            # expr = self.parse_expression()
+            # self.eat(TokenType.RPAREN)
+            # return expr
+        elif tok.value in ("sonkhya", "dosomik", "bhasha"):
+            return self.parse_input(tok.value)
         else:
             raise Exception(f"Unexpected token in expression: {tok}")
         
@@ -261,3 +257,24 @@ class Parser:
         self.eat(TokenType.KEYWORD, "jao")
         self.eat(TokenType.SEMICOLON)
         return Continue()
+    
+    def parse_input(self, keyword):
+        if keyword == "sonkhya":
+            self.eat(TokenType.KEYWORD, "nao")
+            self.eat(TokenType.LPAREN)
+            self.eat(TokenType.RPAREN)
+            return Input("int")
+        elif keyword == "dosomik":
+            self.eat(TokenType.KEYWORD, "sonkhya")
+            self.eat(TokenType.KEYWORD, "nao")
+            self.eat(TokenType.LPAREN)
+            self.eat(TokenType.RPAREN)
+            return Input("float")
+        elif keyword == "bhasha":
+            self.eat(TokenType.KEYWORD, "nao")
+            self.eat(TokenType.LPAREN)
+            self.eat(TokenType.RPAREN)
+            return Input("string")
+        else:
+            raise Exception("Expected {0} or {1} or {2}, got {3}".format("sonkhya", "dosomik", "bhasha", keyword))
+
