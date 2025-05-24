@@ -11,10 +11,12 @@
 - Bengali-flavored syntax like:
   - `eta holo a = 10;` → variable declaration
   - `lekho ("Hello");` → print statement
+  - `sonkhya nao();` → user input of type int
   - `jodi (a > b) { ... }` → if condition
   - `nahole { ... }` → else block
   - `nahole jodi { ... }` → else if block
   - `jotokhon (a != 0) { ... }` → while loop
+  - and many more.
 - Basic arithmetic (`+`, `-`, `*`, `/`)
 - Logical operators (`==`, `!=`, `>`, `<`, `>=`, `<=`)
 - AST-based interpreter
