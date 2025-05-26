@@ -17,7 +17,7 @@
   - `nahole jodi { ... }` → else if block
   - `jotokhon (a != 0) { ... }` → while loop
   - and many more.
-- Basic arithmetic (`+`, `-`, `*`, `/`)
+- Basic arithmetic (`+`, `-`, `*`, `/`, `%`)
 - Logical operators (`==`, `!=`, `>`, `<`, `>=`, `<=`)
 - AST-based interpreter
 - Simple tokenizer and parser

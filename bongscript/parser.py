@@ -1,5 +1,13 @@
 from .token import TokenType, Token
 
+OP_PRECEDENCE = {
+    '||' : 1,
+    '&&' : 2,
+    '==' : 3, '!=' : 3, '<' : 3, '>' : 3, '<=': 3, '>=' : 3,
+    '+' : 4, '-' : 4,
+    '*' : 5, '/' : 5, '%' : 5
+}
+
 class Node:
     pass
 
@@ -216,11 +224,13 @@ class Parser:
         self.eat(TokenType.RBRACE)
         return While(cond, body)
 
-    def parse_expression(self):
+    def parse_expression(self, min_precedence=1):
         left = self.parse_term()
-        while self.current().type == TokenType.OPERATOR:
+        while self.current().type == TokenType.OPERATOR and OP_PRECEDENCE.get(self.current().value, 0) >= min_precedence:
             op = self.eat().value
-            right = self.parse_term()
+            # right = self.parse_term()
+            precedence = OP_PRECEDENCE[op]
+            right = self.parse_expression(precedence+1)
             left = BinOp(left, op, right)
         return left
 

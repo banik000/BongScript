@@ -1,0 +1,17 @@
+kaj shuru
+
+ullekho("Enter Number n: ");
+eta holo n = sonkhya nao();
+eta holo i = 2;
+eta holo ans = 1;
+
+jotokhon(i <= n)
+{
+    ans = ans * i;
+    i = i + 1;
+}
+
+ullekho("Factorial is: ");
+lekho(ans);
+
+kaj shesh

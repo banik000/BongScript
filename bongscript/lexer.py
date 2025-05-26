@@ -22,7 +22,7 @@ class Lexer:
         "nao"
     }
     OPERATORS = {
-        '+', '-', '*', '/', '>', '<', '==', '=', '!='
+        '+', '-', '*', '/', '%', '>', '<', '>=', '<=', '==', '=', '!='
     }
 
     def __init__(self, code):
@@ -66,7 +66,7 @@ class Lexer:
             elif char == '"':
                 tokens.append(Token(TokenType.STRING, self.consume_string()))
 
-            elif char in '+-*/<>=!':
+            elif char in '+-*/<>=!%':
                 tokens.append(self.consume_operator())
 
             elif char == ';':
