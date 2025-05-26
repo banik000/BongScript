@@ -63,6 +63,10 @@ class Interpreter:
                 return left >= right
             elif node.op == '<=':
                 return left <= right
+            elif node.op == '||':
+                return left or right
+            elif node.op == '&&':
+                return left and right
             else:
                 raise Exception(f"Unknown operator: {node.op}")
 

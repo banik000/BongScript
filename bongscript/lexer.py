@@ -19,7 +19,9 @@ class Lexer:
         "sonkhya",
         "dosomik",
         "bhasha",
-        "nao"
+        "nao",
+        "ebong",
+        "othoba"
     }
     OPERATORS = {
         '+', '-', '*', '/', '%', '>', '<', '>=', '<=', '==', '=', '!='
@@ -55,6 +57,10 @@ class Lexer:
                 if identifier in self.KEYWORDS:
                     if identifier == "montobbo":
                         self.consume_comment()
+                    elif identifier == "ebong":
+                        tokens.append(Token(TokenType.OPERATOR, '&&'))
+                    elif identifier == "othoba":
+                        tokens.append(Token(TokenType.OPERATOR, '||'))
                     else:
                         tokens.append(Token(TokenType.KEYWORD, identifier))
                 else:
