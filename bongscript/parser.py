@@ -97,6 +97,12 @@ class Input(Node):
         self.input_type = input_type
     def __repr__(self):
         return f"Input(Type = {self.input_type})"
+    
+class Boolean(Node):
+    def __init__(self, value):
+        self.value = value
+    def __repr__(self):
+        return f"Boolean({self.value})"
 
 class Parser:
     def __init__(self, tokens):
@@ -242,6 +248,8 @@ class Parser:
             return String(tok.value)
         elif tok.type == TokenType.IDENTIFIER:
             return Variable(tok.value)
+        elif tok.type == TokenType.BOOLEAN:
+            return Boolean(tok.value)
         elif tok.type == TokenType.LPAREN:
             expr = self.parse_expression()
             self.eat(TokenType.RPAREN)

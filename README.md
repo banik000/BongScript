@@ -17,6 +17,7 @@
   - `nahole jodi { ... }` → else if block
   - `jotokhon (a != 0) { ... }` → while loop
   - `ebong`, `othoba` → logical AND, logical OR
+  - `sotti`, `mitthe` → boolean True and False
   - and many more. (Supported keywords listed below)
 - Basic arithmetic (`+`, `-`, `*`, `/`, `%`)
 - Logical operators (`==`, `!=`, `>`, `<`, `>=`, `<=`)
@@ -241,6 +242,8 @@ kaj shesh
 | egiye jao            | continue             | Python               |
 | ebong                | and                  | Python               |
 | othoba               | or                   | Python               |
+| sotti                | true                 | Python               |
+| mitthe               | false                | Python               |
 | bhasha nao           | input                | Python               |
 | sonkhya nao          | integer input        |                      |
 | dosomik sonkhya nao  | decimal input        |                      |

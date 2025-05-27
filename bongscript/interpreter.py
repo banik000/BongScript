@@ -1,4 +1,4 @@
-from .parser import Program, Print, Assign, BinOp, Number, String, Variable, If, While, Break, Continue, Input
+from .parser import Program, Print, Assign, BinOp, Number, String, Variable, If, While, Break, Continue, Input, Boolean
 
 class Environment:
     def __init__(self):
@@ -74,6 +74,9 @@ class Interpreter:
             return node.value
 
         elif isinstance(node, String):
+            return node.value
+        
+        elif isinstance(node, Boolean):
             return node.value
 
         elif isinstance(node, Variable):

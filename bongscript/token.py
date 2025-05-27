@@ -5,6 +5,7 @@ class TokenType(Enum):
     IDENTIFIER = auto()
     NUMBER = auto()
     STRING = auto()
+    BOOLEAN = auto()
     OPERATOR = auto()
     ASSIGN = auto()
     SEMICOLON = auto()

@@ -16,12 +16,14 @@ def main():
     lexer = Lexer(code)
     tokens = lexer.tokenize()
 
-    #pprint(tokens)
+    if "-t" in sys.argv:
+        pprint(tokens)
 
     parser = Parser(tokens)
     ast = parser.parse()
 
-    #pprint(ast)
+    if "-a" in sys.argv:
+        pprint(ast)
 
     interpreter = Interpreter()
     interpreter.eval(ast)

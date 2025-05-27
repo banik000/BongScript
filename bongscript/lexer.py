@@ -21,7 +21,9 @@ class Lexer:
         "bhasha",
         "nao",
         "ebong",
-        "othoba"
+        "othoba",
+        "sotti",
+        "mitthe"
     }
     OPERATORS = {
         '+', '-', '*', '/', '%', '>', '<', '>=', '<=', '==', '=', '!='
@@ -61,6 +63,10 @@ class Lexer:
                         tokens.append(Token(TokenType.OPERATOR, '&&'))
                     elif identifier == "othoba":
                         tokens.append(Token(TokenType.OPERATOR, '||'))
+                    elif identifier == "sotti":
+                        tokens.append(Token(TokenType.BOOLEAN, True))
+                    elif identifier == "mitthe":
+                        tokens.append(Token(TokenType.BOOLEAN, False))
                     else:
                         tokens.append(Token(TokenType.KEYWORD, identifier))
                 else:
